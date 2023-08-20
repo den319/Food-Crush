@@ -17,8 +17,8 @@ function App() {
       <Search/>
       {favourite.length > 0 && <Favourite/>}
       {showModal && <Modal/>}
-      {console.log(clicked)}
-      {(clicked && <Meals/>)} 
+    
+      <Meals/>
       
       <Footer/>
       

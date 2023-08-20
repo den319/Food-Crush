@@ -25,7 +25,7 @@ function AppProvider({children}) {
     const [showModal, setShowModal]= useState(false);
     const [selectedMeal, setSelectedMeal]= useState(null);
     const [favourite, setFavourite]= useState(get_favourites_from_local());
-    const [clicked, setClicked]= useState(false);
+    // const [clicked, setClicked]= useState(false);
 
     async function fetch_data(url) {
         setLoading(true);
@@ -137,7 +137,6 @@ function AppProvider({children}) {
     }
 
     function render_meals_list(meals) {
-        console.log('clicked');
         
         return (
             <section className="grid grid-cols-1 gap-5 pt-10 pb-[3.5rem] my-4 px-4 border-b-2 border-black sm:grid-cols-2 md:grid-cols-3 
@@ -153,8 +152,8 @@ function AppProvider({children}) {
     }
 
     return (
-        <AppContext.Provider value={{loading, meals, render_meals_list, setSearchedVal, fetch_rendom_meal, showModal, 
-                    selectedMeal, select_meal, close_modal, favourite, add_to_favourites, remove_from_favourites, clicked, setClicked}}>
+        <AppContext.Provider value={{loading, meals, setMeals, render_meals_list, setSearchedVal, fetch_rendom_meal, showModal, 
+                    selectedMeal, select_meal, close_modal, favourite, add_to_favourites, remove_from_favourites, searchedVal, setSearchedVal}}>
             {children}
         </AppContext.Provider>
     )

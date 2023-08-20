@@ -8,7 +8,7 @@ function Search() {
 
     const [text, setText]= useState('');
 
-    const {setSearchedVal, fetch_rendom_meal, setMeals, render_meals_list, meals, clicked, setClicked}= useContext(AppContext);
+    const {searchedVal, setSearchedVal, fetch_rendom_meal, setMeals, render_meals_list, meals}= useContext(AppContext);
 
     const handle_change= (event) => {
         setText(event.target.value);
@@ -28,8 +28,8 @@ function Search() {
     }
 
     function go_to_home() {
-        setMeals(meals);
-        setClicked(!clicked);
+        console.log(searchedVal);
+        setSearchedVal('a');
     }
 
     return (
@@ -49,7 +49,7 @@ function Search() {
                     </button>
                     
                     <button className="bg-black text-white w-[6.5rem] h-[2rem] mt-[1rem] rounded-lg hover:bg-white hover:text-black"
-                        onClick={() => go_to_home()}>Home
+                        onClick={go_to_home}>Home
                     </button>
                 </div>
                 
